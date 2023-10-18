@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converstion</title>
+</head>
+<style>
+    body{
+        background-color: rgb(201, 191, 209);
+    }
+    .container{
+        margin-left: 300px;
+        align-items: center;
+        margin-top: 200px;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(216, 112, 147);
+        border: 800px;
+        height: 330px;
+        width: 700px;
+        border: 3px solid rgb(189, 79, 79);
+        border-radius: 4px;
+    }
+    .result{
+        display: contents;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>BODY MASS INDEX </h1>
+    <h2>weight</h2>
+    <input type="text" id="weight">
+    <h2>Height</h2>
+    <input type="text" id="height"><br><br>
+    <button onclick="calculateBMI()">calculate</button>
+    <p id="results"></p>
+    </div>
+    <script>
+        function calculateBMI(){
+            let weight=Number(document.getElementById("weight").value);
+            let height=Number(document.getElementById("height").value);
+            let BMI=weight/(height*height);
+            document.getElementById("results").innerHTML=BMI;
+        }
+    </script>
+</body>
+</html>
