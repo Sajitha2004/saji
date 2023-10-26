@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME</title>
+</head>
+<style>
+    body {
+        background-color: rgb(163, 156, 163);
+    }
+
+    .container {
+        margin-left: 350px;
+        align-items: center;
+        margin-top: 100px;
+        text-align: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(158, 126, 139, 0.979), rgb(175, 174, 175));
+        border-radius: 5px;
+        border: 700px;
+        height: 400px;
+        width: 600px;
+        border: 2px solid rgb(189, 79, 79);
+        border-radius: 10px;
+    }
+
+    .ss {
+        color: rgb(65, 63, 63)
+    }
+
+    .sv {
+        background-color: rgb(16, 185, 185);
+    }
+</style>
+<body>
+<div class="container">
+    <h1 class="ss">Time Difference Calculator</h1><br><br>
+    <label for="start">Start Time</label><br>
+    <input type="text" id="start"><br><br>
+    <label for="end">End Time</label><br>
+    <input type="text" id="end"><br><br>
+    <button class="sv" onclick="calculate()">Calculate</button>
+    <p id="output"></p>
+</div>
+</body>
+<script>
+    function calculate() {
+        const s = document.getElementById("start").value;
+        const e = document.getElementById("end").value;
+
+        const startparts = s.split(":");
+        const endparts = e.split(":");
+
+        const starthours = parseInt(startparts[0]);
+        const startminutes = parseInt(startparts[1]);
+
+        const endhours = parseInt(endparts[0]);
+        const endminutes = parseInt(endparts[1]);
+
+        const diffh = endhours - starthours;
+        const diffm = endminutes - startminutes;
+
+        document.getElementById("output").textContent = "Time difference is " + diffh + " hours and " + diffm + " minutes";
+    }
+</script>
+</html>
