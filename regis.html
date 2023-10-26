@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+</head>
+<style>
+    body{
+        background-color: rgb(218, 230, 208);
+    }
+    .container{
+        margin-left: 350px;
+        align-items: center;
+        margin-top: 100px;
+        text-align: center;
+        justify-content: center;
+        background-image:linear-gradient(rgba(158, 126, 139, 0.979), 	rgb(175, 174, 175)); 
+        border-radius: 5px;
+        border: 700px;
+        height: 400px;
+        width: 600px;
+        border: 2px solid rgb(189, 79, 79);
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+       <h2>REGISTER</h2>
+
+        <label>Name</label><br>
+        <input type="text" id="name" placeholder="saji">
+        <span id="nmessage"></span><br>
+
+        <br><label>Email</label><br>
+        <input type="email" id="email" placeholder="saji@email.com">
+        <span id="emessage"></span><br>
+
+        <br><label for="password">Password</label><br>
+        <input type="password" id="password">
+        <span id="pmessage"></span><br>
+
+        <br><label for="confirmpassword">Confirm password</label><br>
+        <input type="password" id="confirmpassword">
+        <span id="cpmessage"></span><br>
+
+        <br><button onclick="register()">register</button>
+    </div>
+
+</body>
+<script>
+      function register(){
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+
+            if( name ==""){
+                nmessage.innerHTML = "Fill name";
+            }   
+            if(email ==""){
+                emessage.innerHTML = "Enter mail Id";
+            }
+            if(password ==""){
+                pmessage.innerHTML = "Enter password";
+            }   
+            else if (password.length < 6) {
+                pmessage.innerHTML = "Password must contains atleast 8 characters.";
+            } 
+            if(confirmpassword ==""){
+                cpmessage.innerHTML = "Enter Confirm Passsword";
+            }  
+            else if(password !== confirmpassword){
+                cpmessage.innerHTML = "Passwords doesnt match";
+            }      
+        }
+
+
+</script>
+</html>
