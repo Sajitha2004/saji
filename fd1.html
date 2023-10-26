@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Calculator</title>
+    <style>
+        body {
+            background-color: rgb(163, 156, 163);
+        }
+
+        .container {
+            margin-left: 350px;
+            margin-top: 100px;
+            text-align: center;
+            background-image: linear-gradient(rgba(158, 126, 139, 0.979), rgb(175, 174, 175));
+            border-radius: 10px;
+            border: 2px solid rgb(189, 79, 79);
+            height: 400px;
+            width: 600px;
+        }
+
+        .ss {
+            color: rgb(65, 63, 63);
+        }
+
+        .sv {
+            background-color: rgb(164, 204, 204);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="ss">FD Calculator</h1>
+        <label for="Principal">Principal Amount in (₹)</label><br>
+        <input type="number" id="Principal"><br><br>
+        <label for="Interest">Interest Rate in (%)</label><br>
+        <input type="number" id="Interest"><br><br>
+        <label for="Time">Time in Months</label><br>
+        <input type="number" id="Time"><br><br>
+        <button class="sv" onclick="calculate()">Calculate</button><br><br>
+        <p id="rdr">Your FD is (₹) </p>
+    </div>
+    <script>
+        function calculate() {
+            const Principal = parseFloat(document.getElementById("Principal").value);
+            const Interest = parseFloat(document.getElementById("Interest").value);
+            const Time = parseFloat(document.getElementById("Time").value);
+
+            const rate = Interest / 100 / 12;
+
+            const rda = Principal * (1 + rate * Time);
+
+            let rdaa = Math.trunc(rda);
+
+            document.getElementById("rdr").textContent = "Your FD is ₹" + rdaa;
+        }
+    </script>
+</body>
+</html>
